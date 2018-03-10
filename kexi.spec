@@ -55,11 +55,17 @@ BuildRequires:  cmake(KPropertyWidgets) >= %{version}
 BuildRequires:  cmake(Marble)
 
 Requires:       kdb >= %{version}
+# needed for local databases
+Requires:	kdb-sqlite
 Requires:       kproperty >= %{version}
 Requires:       kreport >= %{version}
 
 Conflicts:      calligra-core < 3.0-1
 %rename	calligra-kexi
+
+%define obsoletelibs kexiutils kexiundo kexicore kexiguiutils kexiextendedwidgets kexidataviewcommon kexirelationsview keximigrate keximain kexidatatable kexiformutils kformdesigner
+%{expand:%(for lib in %{obsoletelibs}; do echo Obsoletes: %%mklibname $lib 15; echo; done)}
+
 
 %description
 Kexi is an integrated data management application.
