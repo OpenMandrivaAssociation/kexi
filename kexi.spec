@@ -1,7 +1,9 @@
+%define apiver 3.1
+
 Name:           kexi
 Epoch:          16
 #koffice has epoch 15. We need a higher epoch
-Version: 3.0.2
+Version: 3.1.0
 Release:        1
 Summary:        An integrated environment for managing data
 Group:          Graphical desktop/KDE
@@ -69,16 +71,16 @@ data and design.
 
 %files -f %{name}.lang
 %doc COPYING*
-%{_kde5_bindir}/%{name}
+%{_kde5_bindir}/%{name}-%apiver
 %{_qt5_plugindir}/%{name}/
 %{_kde5_datadir}/%{name}/
-%{_datadir}/metainfo/org.kde.%{name}.appdata.xml
-%{_kde5_applicationsdir}/org.kde.%{name}.desktop
+%{_datadir}/metainfo/org.kde.%{name}-%{apiver}.appdata.xml
+%{_kde5_applicationsdir}/org.kde.%{name}-%{apiver}.desktop
 
 #--------------------------------------------------------------------
 
-%define libkexicore_major 15
-%define libkexicore %mklibname kexicore %libkexicore_major
+%define libkexicore_major 3.1
+%define libkexicore %mklibname kexicore %{apiver} %libkexicore_major
 
 %package -n     %libkexicore
 Summary:        Kexi core library
@@ -88,12 +90,12 @@ Group:          System/Libraries
 Kexi core library.
 
 %files -n %libkexicore
-%{_kde5_libdir}/libkexicore.so.%{libkexicore_major}*
+%{_kde5_libdir}/libkexicore%{apiver}.so.%{libkexicore_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexidatatable_major 15
-%define libkexidatatable %mklibname kexidatatable %libkexidatatable_major
+%define libkexidatatable_major 3.1
+%define libkexidatatable %mklibname kexidatatable %apiver %libkexidatatable_major
 
 %package -n     %libkexidatatable
 Summary:        Kexi data table library
@@ -103,12 +105,12 @@ Group:          System/Libraries
 Kexi data table library.
 
 %files -n %libkexidatatable
-%{_kde5_libdir}/libkexidatatable.so.%{libkexidatatable_major}*
+%{_kde5_libdir}/libkexidatatable%{apiver}.so.%{libkexidatatable_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexidataviewcommon_major 15
-%define libkexidataviewcommon %mklibname kexidataviewcommon %libkexidataviewcommon_major
+%define libkexidataviewcommon_major 3.1
+%define libkexidataviewcommon %mklibname kexidataviewcommon %apiver %libkexidataviewcommon_major
 
 %package -n     %libkexidataviewcommon
 Summary:        Kexi data view common library
@@ -118,12 +120,12 @@ Group:          System/Libraries
 Kexi data view common library.
 
 %files -n %libkexidataviewcommon
-%{_kde5_libdir}/libkexidataviewcommon.so.%{libkexidataviewcommon_major}*
+%{_kde5_libdir}/libkexidataviewcommon%{apiver}.so.%{libkexidataviewcommon_major}*
 
 #-------------------------------------------------------------------- 
 
-%define libkexiextendedwidgets_major 15
-%define libkexiextendedwidgets %mklibname kexiextendedwidgets %libkexiextendedwidgets_major
+%define libkexiextendedwidgets_major 3.1
+%define libkexiextendedwidgets %mklibname kexiextendedwidgets %apiver %libkexiextendedwidgets_major
 
 %package -n     %libkexiextendedwidgets
 Summary:        Kexi extended widgets library
@@ -133,12 +135,12 @@ Group:          System/Libraries
 Kexi extended widgets library.
 
 %files -n %libkexiextendedwidgets
-%{_kde5_libdir}/libkexiextendedwidgets.so.%{libkexiextendedwidgets_major}*
+%{_kde5_libdir}/libkexiextendedwidgets%{apiver}.so.%{libkexiextendedwidgets_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexiformutils_major 15
-%define libkexiformutils %mklibname kexiformutils %libkexiformutils_major
+%define libkexiformutils_major 3.1
+%define libkexiformutils %mklibname kexiformutils %apiver %libkexiformutils_major
 
 %package -n     %libkexiformutils
 Summary:        Kexi formutils library
@@ -148,12 +150,12 @@ Group:          System/Libraries
 Kexi formutils library.
 
 %files -n %libkexiformutils
-%{_kde5_libdir}/libkexiformutils.so.%{libkexiformutils_major}*
+%{_kde5_libdir}/libkexiformutils%{apiver}.so.%{libkexiformutils_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexiguiutils_major 15
-%define libkexiguiutils %mklibname kexiguiutils %libkexiguiutils_major
+%define libkexiguiutils_major 3.1
+%define libkexiguiutils %mklibname kexiguiutils %apiver %libkexiguiutils_major
 
 %package -n     %libkexiguiutils
 Summary:        Kexi gui utils library
@@ -163,12 +165,12 @@ Group:          System/Libraries
 Kexi gui utils library.
 
 %files -n %libkexiguiutils
-%{_kde5_libdir}/libkexiguiutils.so.%{libkexiguiutils_major}*
+%{_kde5_libdir}/libkexiguiutils%{apiver}.so.%{libkexiguiutils_major}*
 
 #--------------------------------------------------------------------
 
-%define libkeximain_major 15
-%define libkeximain %mklibname keximain %libkeximain_major
+%define libkeximain_major 3.1
+%define libkeximain %mklibname keximain %{apiver} %libkeximain_major
 
 %package -n     %libkeximain
 Summary:        Kexi main library
@@ -178,12 +180,12 @@ Group:          System/Libraries
 Kexi main library.
 
 %files -n %libkeximain
-%{_kde5_libdir}/libkeximain.so.%{libkeximain_major}*
+%{_kde5_libdir}/libkeximain%{apiver}.so.%{libkeximain_major}*
 
 #--------------------------------------------------------------------
 
-%define libkeximigrate_major 15
-%define libkeximigrate %mklibname keximigrate %libkeximigrate_major
+%define libkeximigrate_major 3.1
+%define libkeximigrate %mklibname keximigrate %{apiver} %libkeximigrate_major
 
 %package -n     %libkeximigrate
 Summary:        Kexi migrate library
@@ -193,12 +195,12 @@ Group:          System/Libraries
 Kexi migrate library.
 
 %files -n %libkeximigrate
-%{_kde5_libdir}/libkeximigrate.so.%{libkeximigrate_major}*
+%{_kde5_libdir}/libkeximigrate%{apiver}.so.%{libkeximigrate_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexirelationsview_major 15
-%define libkexirelationsview %mklibname kexirelationsview %libkexirelationsview_major
+%define libkexirelationsview_major 3.1
+%define libkexirelationsview %mklibname kexirelationsview %{apiver} %libkexirelationsview_major
 
 %package -n     %libkexirelationsview
 Summary:        Kexi relations view library
@@ -208,12 +210,12 @@ Group:          System/Libraries
 Kexi relations view library.
 
 %files -n %libkexirelationsview
-%{_kde5_libdir}/libkexirelationsview.so.%{libkexirelationsview_major}*
+%{_kde5_libdir}/libkexirelationsview%{apiver}.so.%{libkexirelationsview_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexiundo_major 15
-%define libkexiundo %mklibname kexiundo %libkexiundo_major
+%define libkexiundo_major 3.1
+%define libkexiundo %mklibname kexiundo %{apiver} %libkexiundo_major
 
 %package -n     %libkexiundo
 Summary:        Kexi undo library
@@ -223,12 +225,12 @@ Group:          System/Libraries
 Kexi undo library.
 
 %files -n %libkexiundo
-%{_kde5_libdir}/libkexiundo.so.%{libkexiundo_major}*
+%{_kde5_libdir}/libkexiundo%{apiver}.so.%{libkexiundo_major}*
 
 #--------------------------------------------------------------------
 
-%define libkexiutils_major 15
-%define libkexiutils %mklibname kexiutils %libkexiutils_major
+%define libkexiutils_major 3.1
+%define libkexiutils %mklibname kexiutils %{apiver} %libkexiutils_major
 
 %package -n     %libkexiutils
 Summary:        Kexi utils library
@@ -238,12 +240,12 @@ Group:          System/Libraries
 Kexi utils library.
 
 %files -n %libkexiutils
-%{_kde5_libdir}/libkexiutils.so.%{libkexiutils_major}*
+%{_kde5_libdir}/libkexiutils%{apiver}.so.%{libkexiutils_major}*
 
 #--------------------------------------------------------------------
 
-%define libkformdesigner_major 15
-%define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
+%define libkformdesigner_major 3.1
+%define libkformdesigner %mklibname kformdesigner %apiver %libkformdesigner_major
 
 %package -n     %libkformdesigner
 Summary:        Kexi form designer library
@@ -253,7 +255,7 @@ Group:          System/Libraries
 Kexi form designer library.
 
 %files -n %libkformdesigner
-%{_kde5_libdir}/libkformdesigner.so.%{libkformdesigner_major}*
+%{_kde5_libdir}/libkformdesigner%{apiver}.so.%{libkformdesigner_major}*
 
 #--------------------------------------------------------------------
 
@@ -296,5 +298,5 @@ developing applications that use %{name}.
 %install
 %ninja_install -C build
 
-%find_lang %{name} --all-name
+%find_lang %{name} --all-name --with-kde
 
