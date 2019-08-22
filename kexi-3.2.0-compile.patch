@@ -1,0 +1,11 @@
+diff -up kexi-3.2.0/src/plugins/forms/widgets/kexidbdatepicker.cpp.omv~ kexi-3.2.0/src/plugins/forms/widgets/kexidbdatepicker.cpp
+--- kexi-3.2.0/src/plugins/forms/widgets/kexidbdatepicker.cpp.omv~	2019-08-22 17:33:57.154851293 +0200
++++ kexi-3.2.0/src/plugins/forms/widgets/kexidbdatepicker.cpp	2019-08-22 17:34:13.936910620 +0200
+@@ -22,6 +22,7 @@
+ #include "kexidbdatepicker.h"
+ #include <kexiutils/utils.h>
+ 
++#include <QDate>
+ #include <QLineEdit>
+ #include <QInputMethodEvent>
+ 
