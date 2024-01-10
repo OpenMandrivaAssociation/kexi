@@ -4,7 +4,7 @@ Name:           kexi
 Epoch:          16
 #koffice has epoch 15. We need a higher epoch
 Version: 3.2.0
-Release:        2
+Release:        3
 Summary:        An integrated environment for managing data
 Group:          Graphical desktop/KDE
 License:        GPLv2+
