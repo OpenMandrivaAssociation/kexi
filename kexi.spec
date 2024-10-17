@@ -8,7 +8,7 @@ Release:        3
 Summary:        An integrated environment for managing data
 Group:          Graphical desktop/KDE
 License:        GPLv2+
-URL:            http://www.kexi-project.org/
+URL:            https://www.kexi-project.org/
 Source0:        http://download.kde.org/stable/%{name}/src/%{name}-%{version}.tar.xz
 Patch0:		kexi-3.2.0-compile.patch
 
